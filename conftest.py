@@ -4,6 +4,7 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
 @pytest.fixture
@@ -12,8 +13,13 @@ def driver():
     service = Service(ChromeDriverManager().install())
 
     # cấu hình các tùy chọn cho trình duyệt Chrome, ví dụ:Mở ở chế độ full screen, Tắt thông báo,Chạy ở chế độ headless (không giao diện)...Tuỳ chọn trình duyệt (ở đây dùng Chrome)
-    options = webdriver.ChromeOptions()
-    options.add_argument("--start-maximized")  # Mở trình duyệt ở chế độ full màn hình
+#   options = webdriver.ChromeOptions()
+#    options.add_argument("--start-maximized")  # Mở trình duyệt ở chế độ full màn hình
+    options = Options()
+    options.add_argument("--headless")  # 🔍 Bắt buộc trên GitHub Actions
+    options.add_argument("--no-sandbox")  # 🔧 Tăng độ ổn định khi chạy CI
+    options.add_argument("--disable-dev-shm-usage")  # 🧠 Tránh lỗi bộ nhớ
+    options.add_argument("--window-size=1920,1080")  # ✅ Thay vì --start-maximized
 
     # Khởi tạo trình điều khiển (WebDriver)
     driver = webdriver.Chrome(service=service, options=options)
