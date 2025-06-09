@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
+
 class EmployeePage(BasePage):
     # Định danh các phần tử
     EMPLOYEE_NAME_INPUT = (By.XPATH, "//input[@placeholder='Type for hints...']") # => Locator ô input tìm tên nhân viên
@@ -20,3 +21,4 @@ class EmployeePage(BasePage):
         """
         rows = self.find_all_elements(*self.EMPLOYEE_ROWS)
         return len(rows)
+

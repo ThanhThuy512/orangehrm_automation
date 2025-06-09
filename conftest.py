@@ -16,7 +16,7 @@ def driver():
 #   options = webdriver.ChromeOptions()
 #    options.add_argument("--start-maximized")  # Mở trình duyệt ở chế độ full màn hình
     options = Options()
-    options.add_argument("--headless")  # 🔍 Bắt buộc trên GitHub Actions
+    options.add_argument("--headless")  # 🔍 Bắt buộc trên GitHub Actions => lệnh này không mở ra cửa số vì vậy nếu muốn mở cửa sổ chrome thì cần dòng này còn nếu chạy trên Git thì bắt buộc phải có 
     options.add_argument("--no-sandbox")  # 🔧 Tăng độ ổn định khi chạy CI
     options.add_argument("--disable-dev-shm-usage")  # 🧠 Tránh lỗi bộ nhớ
     options.add_argument("--window-size=1920,1080")  # ✅ Thay vì --start-maximized

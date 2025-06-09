@@ -45,27 +45,13 @@ jobs:
       run: |
         allure generate allure-results --clean -o allure-report
 
-    - name: Deploy Allure report to GitHub Pages
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Add .nojekyll to report
       run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        touch allure-report/.nojekyll
 
-        # Checkout or create gh-pages branch
-        if git show-ref --verify --quiet refs/heads/gh-pages; then
-          git checkout gh-pages
-        else
-          git checkout --orphan gh-pages
-        fi
-
-        # Clear old files
-        git rm -rf . || true
-
-        # Copy new report files
-        cp -r ../allure-report/* .
-
-        # Commit and push
-        git add .
-        git commit -m "Update Allure report from CI build $GITHUB_RUN_ID" || echo "No changes to commit"
-        git push origin gh-pages --force
+    - name: Deploy Allure report to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./allure-report
+        publish_branch: gh-pages
