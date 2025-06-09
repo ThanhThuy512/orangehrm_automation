@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Jun 09 14:36:11 UTC 2025","Mon Jun 09 14:36:14 UTC 2025","2613","tests","test_quick_search","","","","Tìm kiếm nhanh trên dashboard","Nhập từ khóa 'Leave' vào ô tìm kiếm và xác minh kết quả"
+"broken","Mon Jun 02 14:15:21 UTC 2025","Mon Jun 02 14:15:21 UTC 2025","0","tests","test_search_employee","","","","test_search_employee",""
+"passed","Mon Jun 09 14:36:08 UTC 2025","Mon Jun 09 14:36:11 UTC 2025","2418","tests","test_menu_navigation","","","","Kiểm tra các mục menu trên Dashboard","Sau khi đăng nhập, menu bên trái phải hiển thị đúng các mục chính"
+"passed","Mon Jun 09 14:36:05 UTC 2025","Mon Jun 09 14:36:08 UTC 2025","2861","tests","test_login","","","","Đăng nhập OrangeHRM thành công","Test đăng nhập với tài khoản mặc định: Admin/admin123"
+"passed","Mon Jun 09 14:36:14 UTC 2025","Mon Jun 09 14:36:18 UTC 2025","3330","tests","test_search_employee","","","","Tìm kiếm nhân viên với từ khóa hợp lệ","Vào menu PIM, nhập tên nhân viên và xác minh có kết quả trả về"
